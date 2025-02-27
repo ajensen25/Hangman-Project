@@ -189,4 +189,16 @@ body .container {
   .hangman-wrapper .image-container img {
     height: 200px;
   }
+
+  .input-wrapper .word-display {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+    height: 2.2rem;
+  }
+
+  .input-wrapper .word-display .letter {
+    width: 25px;
+    font-size: 1.6rem;
+  }
 }
