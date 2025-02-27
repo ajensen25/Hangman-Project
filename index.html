@@ -10,14 +10,14 @@
   <section class="container">
     <div class="hangman-wrapper">
       <div class="image-container">
-        <img src="images/hangman-0.svg" alt="Hangman">
+        <img src="images/hangman-0.svg" alt="Hangman" class="js-hangman">
       </div>
       <h2>HANGMAN GAME</h2>
     </div>
     <div class="input-wrapper">
       <ul class="word-display">
         <li class="letter"></li>
-        <li class="letter guessed">a</li>
+        <li class="letter"></li>
         <li class="letter"></li>
         <li class="letter"></li>
         <li class="letter"></li>
@@ -28,7 +28,7 @@
         <p class="hint js-hint">
           Hint: <b>An art form using colors on a surface to create images or expression.</b>
         </p>
-        <p>
+        <p class="js-guesses">
           Incorrect guesses: <b>0 / 6</b>
         </p>
       </div>
@@ -37,6 +37,15 @@
       </div>
     </div>
   </section>
+
+  <div class="game-over js-game-over hidden">
+    <div class="game-over-container">
+      <img src="images/lost.gif" alt="You Lost!">
+      <h2>Game Over!</h2>
+      <p>The correct word was: &nbsp;<b>painting</b></p>
+      <button class="js-play-again">PLAY AGAIN</button>
+    </div>
+  </div>
 
   <script type="module" src="script.js"></script>
 </body>
