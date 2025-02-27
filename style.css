@@ -108,6 +108,11 @@ body .container {
   background: rgba(36, 149, 57, 0.8);
 }
 
+.input-wrapper .keyboard button.disabled-button {
+  background: rgba(36, 149, 57, 0.6);
+  cursor: default;
+}
+
 
 /* Game Over Styling */
 .game-over {

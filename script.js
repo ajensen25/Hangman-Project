@@ -10,6 +10,7 @@ const wordDisplay = document.querySelector('.js-word-display');
 
 alphabet.forEach((letter) => {
   const button = document.createElement('button');
+  button.classList.add(`${letter}`);
   button.innerHTML = letter;
   keyboard.appendChild(button);
   button.addEventListener('click', () => {
@@ -19,6 +20,8 @@ alphabet.forEach((letter) => {
 
 let currentWord;
 let incorrectGuesses = 0;
+let guessedWord = '';
+
 const maxGuesses = 6;
 
 const guesses = document.querySelector('.js-guesses');
@@ -29,7 +32,6 @@ function renderGuesses() {
     Incorrect guesses: <b>${incorrectGuesses} / ${maxGuesses}</b>
   `;
 }
-
 
 function selectWord() {
   const listIndex = Math.floor(Math.random() * wordList.length);
@@ -43,6 +45,9 @@ function startGame() {
   hint.innerHTML = `
     Hint: <b>${currentWord.hint}</b>
   `;
+  incorrectGuesses = 0;
+  guessedWord = '';
+  renderGuesses();
   hangmanImage.src = 'images/hangman-0.svg';
   gameOverDisplay.classList.add('hidden');
   generateWordDisplay();
@@ -56,7 +61,6 @@ function generateWordDisplay() {
     `
       <li class="letter"></li>
     `;
-    console.log(wordDisplayHTML);
   }
   wordDisplay.innerHTML = wordDisplayHTML;
 }
@@ -64,8 +68,12 @@ function generateWordDisplay() {
 function buttonClick(button) {
   const letter = button.innerHTML;
   if (currentWord.word.includes(letter)) {
-    console.log(letter, 'is in ', currentWord.word);
-    gameOver('won');
+    guessedWord += letter;
+    const keyboardButton = document.querySelector(`.${letter}`);
+    keyboardButton.classList.add('disabled-button');
+    keyboardButton.disabled = true;
+    console.log(guessedWord);
+    // gameOver('won');
   }
   else {
     incorrectGuesses += 1;
