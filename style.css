@@ -175,3 +175,18 @@ body .container {
   font-size: 1rem;
   cursor: pointer;
 }
+
+@media screen and (width <= 1000px) {
+  body .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .container .hangman-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .hangman-wrapper .image-container img {
+    height: 200px;
+  }
+}

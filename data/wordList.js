@@ -259,6 +259,102 @@ export const wordList = [
       word: "brilliant",
       hint: "Exceptionally clever, talented, or impressive."
   },
+  {
+    word: "apple",
+    hint: "A fruit that keeps the doctor away"
+  },
+  {
+    word: "banana",
+    hint: "A yellow fruit that monkeys love"
+  },
+  {
+    word: "cherry",
+    hint: "A small, red fruit often used in pies"
+  },
+  {
+    word: "dog",
+    hint: "A man's best friend"
+  },
+  {
+    word: "elephant",
+    hint: "A large mammal with big ears and a trunk"
+  },
+  {
+    word: "guitar",
+    hint: "A stringed musical instrument"
+  },
+  {
+    word: "house",
+    hint: "A place where people live"
+  },
+  {
+    word: "island",
+    hint: "A piece of land surrounded by water"
+  },
+  {
+    word: "jungle",
+    hint: "A dense forest typically found in tropical areas"
+  },
+  {
+    word: "kangaroo",
+    hint: "A marsupial known for jumping and carrying babies in a pouch"
+  },
+  {
+    word: "lemon",
+    hint: "A sour, yellow citrus fruit"
+  },
+  {
+    word: "notebook",
+    hint: "A place to write down your thoughts"
+  },
+  {
+    word: "octopus",
+    hint: "A sea creature with eight tentacles"
+  },
+  {
+    word: "pencil",
+    hint: "An instrument used for writing or drawing"
+  },
+  {
+    word: "quilt",
+    hint: "A blanket made of various pieces of fabric"
+  },
+  {
+    word: "rose",
+    hint: "A flower often given as a symbol of love"
+  },
+  {
+    word: "sunflower",
+    hint: "A tall, yellow flower that follows the sun"
+  },
+  {
+    word: "tiger",
+    hint: "A large wild cat with orange fur and black stripes"
+  },
+  {
+    word: "umbrella",
+    hint: "An item used to protect yourself from the rain"
+  },
+  {
+    word: "vampire",
+    hint: "A mythical creature that drinks blood"
+  },
+  {
+    word: "whale",
+    hint: "The largest animal in the ocean"
+  },
+  {
+    word: "xylophone",
+    hint: "A musical instrument with wooden bars"
+  },
+  {
+    word: "yacht",
+    hint: "A luxurious boat or ship"
+  },
+  {
+    word: "zebra",
+    hint: "A striped black and white animal found in Africa"
+  },
 ];
 
 export default wordList;
