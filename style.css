@@ -52,6 +52,7 @@ body .container {
   list-style: none;
   display: flex;
   gap: 15px;
+  height: 3rem;
 }
 
 .input-wrapper .word-display .letter {

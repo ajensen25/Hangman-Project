@@ -20,7 +20,7 @@ alphabet.forEach((letter) => {
 
 let currentWord;
 let incorrectGuesses = 0;
-let guessedWord = '';
+let correctLetters = [];
 
 const maxGuesses = 6;
 
@@ -46,8 +46,9 @@ function startGame() {
     Hint: <b>${currentWord.hint}</b>
   `;
   incorrectGuesses = 0;
-  guessedWord = '';
+  correctLetters = [];
   renderGuesses();
+  resetKeyboardButtons();
   hangmanImage.src = 'images/hangman-0.svg';
   gameOverDisplay.classList.add('hidden');
   generateWordDisplay();
@@ -65,15 +66,28 @@ function generateWordDisplay() {
   wordDisplay.innerHTML = wordDisplayHTML;
 }
 
+function correctGuess(clickedLetter) {
+  [...currentWord.word].forEach((letter, index) => {
+    if (letter === clickedLetter) {
+      correctLetters.push(letter);
+      console.log(correctLetters);
+      wordDisplay.querySelectorAll('li')[index].innerText = letter;
+      wordDisplay.querySelectorAll('li')[index].classList.add('guessed');
+    }
+  })
+  console.log(correctLetters.length, currentWord.word.length);
+  if (correctLetters.length === currentWord.word.length) {
+    gameOver('won');
+  }
+}
+
 function buttonClick(button) {
-  const letter = button.innerHTML;
-  if (currentWord.word.includes(letter)) {
-    guessedWord += letter;
-    const keyboardButton = document.querySelector(`.${letter}`);
-    keyboardButton.classList.add('disabled-button');
-    keyboardButton.disabled = true;
-    console.log(guessedWord);
-    // gameOver('won');
+  const clickedLetter = button.innerHTML;
+  const keyboardButton = document.querySelector(`.${clickedLetter}`);
+  keyboardButton.classList.add('disabled-button');
+  keyboardButton.disabled = true;
+  if (currentWord.word.includes(clickedLetter)) {
+    correctGuess(clickedLetter);
   }
   else {
     incorrectGuesses += 1;
@@ -118,6 +132,13 @@ function addButtonEvent() {
   playAgainButton.addEventListener('click', () => {
     startGame();
   });
+}
+
+function resetKeyboardButtons() {
+  const buttons = document.querySelectorAll('button').forEach((button) => {
+    button.disabled = false;
+    button.classList.remove('disabled-button');
+  })
 }
 
 startGame();
