@@ -6,6 +6,7 @@ const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm
 const keyboard = document.querySelector('.js-keyboard');
 const hangmanImage = document.querySelector('.js-hangman');
 const gameOverDisplay = document.querySelector('.js-game-over');
+const wordDisplay = document.querySelector('.js-word-display');
 
 alphabet.forEach((letter) => {
   const button = document.createElement('button');
@@ -44,7 +45,20 @@ function startGame() {
   `;
   hangmanImage.src = 'images/hangman-0.svg';
   gameOverDisplay.classList.add('hidden');
+  generateWordDisplay();
   console.log(currentWord.word);
+}
+
+function generateWordDisplay() {
+  let wordDisplayHTML = '';
+  for (let i = 0; i < currentWord.word.length; i++) {
+    wordDisplayHTML += 
+    `
+      <li class="letter"></li>
+    `;
+    console.log(wordDisplayHTML);
+  }
+  wordDisplay.innerHTML = wordDisplayHTML;
 }
 
 function buttonClick(button) {

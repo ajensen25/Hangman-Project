@@ -25,7 +25,7 @@ body .container {
   display: flex;
   gap: 80px;
   padding: 70px 50px;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 .container .hangman-wrapper {
